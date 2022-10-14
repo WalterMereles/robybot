@@ -1,0 +1,20 @@
+[
+  {
+    "id": "builtin_card-xpGhp2",
+    "formData": {
+      "actions$en": [
+        {
+          "action": "Open URL",
+          "url": "Registrarse",
+          "title": "Registrarse"
+        }
+      ],
+      "title$en": "Registrarse",
+      "subtitle$en": "Registrarse",
+      "image$en": "/api/v1/bots/chatbotroby/media/2idmbbc45excvlnmbaaa-2422601.png"
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-10-11T12:20:55.327Z",
+    "modifiedOn": "2022-10-11T12:20:55.327Z"
+  }
+]

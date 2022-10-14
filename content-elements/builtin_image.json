@@ -1,0 +1,34 @@
+[
+  {
+    "id": "builtin_image-JyMg6E",
+    "formData": {
+      "typing$en": true,
+      "image$en": "/api/v1/bots/chatbotroby/media/y919bvyme97ocbn4l24i-logo-unida.jpg"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-05-10T20:33:50.681Z",
+    "modifiedOn": "2021-05-10T20:33:50.681Z"
+  },
+  {
+    "id": "builtin_image-BMFQp8",
+    "formData": {
+      "typing$en": true,
+      "image$en": "/api/v1/bots/chatbotroby/media/erekv73d3qzf46jmxbbv-Gu%C3%ADa%20eclass.png",
+      "title$en": "imagen_eclass"
+    },
+    "createdBy": "admin",
+    "createdOn": "2021-05-10T20:55:22.179Z",
+    "modifiedOn": "2021-05-10T20:55:22.179Z"
+  },
+  {
+    "id": "builtin_image-W-ccpj",
+    "formData": {
+      "typing$en": true,
+      "image$en": "/api/v1/bots/chatbotroby/media/4mjizcb19ckgl70dqzac-mantenimiento.png",
+      "title$en": "imagenmantenimiento"
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-10-12T12:21:36.986Z",
+    "modifiedOn": "2022-10-12T12:27:48.484Z"
+  }
+]

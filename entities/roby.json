@@ -1,0 +1,11 @@
+{
+  "id": "roby",
+  "name": "Roby",
+  "type": "pattern",
+  "occurrences": [],
+  "sensitive": false,
+  "fuzzy": 0.8,
+  "examples": [],
+  "pattern": "",
+  "matchCase": false
+}

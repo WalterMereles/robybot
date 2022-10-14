@@ -1,0 +1,113 @@
+
+
+create database Comercial_Ahorrazo;
+
+use Comercial_Ahorrazo;
+
+
+CREATE TABLE Proveedor (
+id_proveedor smallint not null primary key identity (1,1),
+Nombre varchar (50),
+Telefono varchar (50),
+Direccion varchar (50),
+RUC varchar (50),
+Correo varchar (50)
+);
+
+CREATE TABLE Clientes (
+id_cliente smallint not null primary key identity (1,1),
+Nombre varchar (50),
+Telefono varchar (50),
+Direccion varchar (50),
+RUC varchar (50),
+Correo varchar (50)
+);
+CREATE TABLE Categoria (
+id_categoria int not null primary key identity (1,1),
+Nombre varchar (50)
+);
+
+drop table Categoria
+
+CREATE TABLE Producto (
+id_producto int not null primary key,
+Nombre varchar (50),
+Descripcion varchar (100),
+Porcentaje1 float,
+Porcentaje2 float,
+Porcentaje3 float,
+Porcentaje4 float,
+Fecha_Vencimiento date null,
+);
+
+CREATE TABLE Producto_Categoria (
+id_producto int not null,
+id_categoria int not null
+);
+
+
+CREATE TABLE Compra_Producto (
+id_compra_pr smallint not null primary key,
+id_proveedor smallint not null,
+Nro_factura varchar(50),
+Fecha date,
+Precio_compra_t float,
+foreign key (id_proveedor) references Proveedor(id_proveedor)
+);
+
+CREATE TABLE Detalle_Compra_Producto (
+id_compra_pr smallint ,
+id_producto int,
+cantidad float,
+Precio_compra_u float,
+foreign key (id_producto) references Producto(id_producto),
+foreign key (id_compra_pr) references Compra_Producto(id_compra_pr)
+);
+
+create table Existencia(
+id_producto int,
+cantidad_ini float,
+cantidad_sal float,
+cantidad_real float,
+foreign key (id_producto) references Producto(id_producto)
+);
+
+CREATE TABLE Venta_Producto (
+id_venta_pr smallint not null primary key,
+id_cliente smallint not null,
+Fecha date,
+Monto_venta_t float,
+Estado varchar (50)
+);
+
+
+CREATE TABLE Detalle_Venta_Producto (
+id_venta_pr smallint ,
+id_producto int,
+cantidad float,
+Monto_total_u float,
+foreign key (id_producto) references Producto(id_producto),
+foreign key (id_venta_pr) references Venta_Producto(id_venta_pr)
+);
+
+
+create table Factura (
+id_factura int not null primary key,
+cod_estable varchar(50),
+timbrado varchar(50),
+expedicion_caj varchar (50),
+Numero_fact varchar (100),
+id_venta_pr smallint,
+foreign key (id_venta_pr) references Venta_Producto(id_venta_pr)
+);
+
+
+alter table Producto_Categoria add constraint FK_id_producto_categ foreign key (id_producto) references Producto (id_producto);
+alter table Producto_Categoria add constraint FK_id_producto_categ_cat foreign key (id_categoria) references Categoria (id_categoria);
+
+alter table Producto_Categoria drop constraint FK_id_producto_categ_cat
+
+alter table Venta_Producto add constraint FK_id_client_vent foreign key (id_cliente) references Clientes (id_cliente);
+
+
+alter table Categoria alter column id_categoria int

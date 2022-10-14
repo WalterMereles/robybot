@@ -1,0 +1,67 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "timeoutDelay": 0,
+    "redirectNoAgent": true
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "hitlnext/check_agents {\"timeoutDelay\":0,\"redirectNoAgent\":true}"
+      ],
+      "next": [
+        {
+          "condition": "temp['hitlnext-noAgent'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "hitl"
+        }
+      ],
+      "id": "644292"
+    },
+    {
+      "name": "hitl",
+      "onEnter": [
+        "hitlnext/handoff {\"timeoutDelay\":0,\"redirectNoAgent\":true}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "wait"
+        }
+      ],
+      "id": "859457"
+    },
+    {
+      "name": "wait",
+      "onEnter": [],
+      "onReceive": [],
+      "next": [
+        {
+          "condition": "temp['hitlnext-noAgent'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "temp['hitlnext-timedOutWaitingAgent'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "temp['hitlnext-handoffResolved'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "wait"
+        }
+      ],
+      "id": "064415"
+    }
+  ]
+}
